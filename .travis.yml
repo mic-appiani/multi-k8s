@@ -19,7 +19,7 @@ before_install:
   - docker build -t mappiani/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true mappiani/docker-react npm test
+  - docker run -e CI=true mappiani/react-test npm test
 
 deploy:
   provider: script
