@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: micheleappiani-com-tls
+spec:
+  secretName: micheleappiani-com
+  issuerRef:
+    name: letsenctypt-prod
+    kind: ClusterIssuer
+  commonName: micheleappiani.com
+  dnsNames:
+    - micheleappiani.com
+    - www.micheleappiani.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - micheleappiani.com
+          - www.micheleappiani.com
