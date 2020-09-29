@@ -6,8 +6,8 @@ docker push mappiani/multi-client:latest
 docker push mappiani/multi-client:$SHA
 docker push mappiani/multi-server:latest
 docker push mappiani/multi-server:$SHA
-docker push mappiani/multi/worker:latest
-docker push mappiani/multi/worker:$SHA
+docker push mappiani/multi-worker:latest
+docker push mappiani/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=mappiani/multi-server:$SHA
